@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>María José | Mis XV Años</title>
+
+<style>
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#f5edf8;
+    color:#55405e;
+    font-family:Georgia,"Times New Roman",serif;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+/* =========================================================
+   DOBLE MARCO PLATEADO
+========================================================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:8px;
+    border:1px solid rgba(170,160,175,.9);
+    pointer-events:none;
+    z-index:9999;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:15px;
+    border:2px solid rgba(255,255,255,.9);
+    box-shadow:
+        0 0 0 1px rgba(145,135,150,.45);
+    pointer-events:none;
+    z-index:9999;
+}
+
+/* =========================================================
+   ELEMENTOS DECORATIVOS
+========================================================= */
+
+.decor{
+    position:absolute;
+    pointer-events:none;
+    z-index:8;
+}
+
+.decor img{
+    width:100%;
+    display:block;
+}
+
+.butterfly{
+    animation:butterflyFloat 8s ease-in-out infinite;
+}
+
+.spark{
+    animation:sparkle 4s ease-in-out infinite;
+}
+
+.star{
+    animation:starFloat 6s ease-in-out infinite;
+}
+
+.disco{
+    animation:discoFloat 10s ease-in-out infinite;
+}
+
+@keyframes butterflyFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-5deg);
+    }
+
+    50%{
+        transform:translateY(-25px) rotate(6deg);
+    }
+}
+
+@keyframes sparkle{
+
+    0%,100%{
+        opacity:.25;
+        transform:scale(.7);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.25);
+    }
+}
+
+@keyframes starFloat{
+
+    0%,100%{
+        opacity:.4;
+        transform:rotate(0deg) scale(.85);
+    }
+
+    50%{
+        opacity:1;
+        transform:rotate(20deg) scale(1.15);
+    }
+}
+
+@keyframes discoFloat{
+
+    0%,100%{
+        transform:translateY(0) rotate(-3deg);
+    }
+
+    50%{
+        transform:translateY(-18px) rotate(3deg);
+    }
+}
+
+/* =========================================================
+   PORTADA
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:70px 25px;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(255,255,255,.18),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(220,194,231,.25),
+            transparent 25%
+        ),
+        linear-gradient(
+            145deg,
+            #654575,
+            #866098,
+            #a477b4,
+            #755185
+        );
+
+    color:white;
+}
+
+.hero .circle1,
+.hero .circle2,
+.hero .circle3{
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.12);
+    pointer-events:none;
+}
+
+.circle1{
+    width:700px;
+    height:700px;
+}
+
+.circle2{
+    width:520px;
+    height:520px;
+}
+
+.circle3{
+    width:350px;
+    height:350px;
+}
+
+/* =========================================================
+   DECORACIONES PORTADA
+========================================================= */
+
+.hero .b1{
+    width:210px;
+    left:-45px;
+    top:13%;
+}
+
+.hero .b2{
+    width:175px;
+    right:-30px;
+    top:23%;
+    animation-delay:2s;
+}
+
+.hero .b3{
+    width:125px;
+    left:2%;
+    bottom:15%;
+    animation-delay:4s;
+}
+
+.hero .b4{
+    width:145px;
+    right:1%;
+    bottom:8%;
+    animation-delay:1s;
+}
+
+.hero .s1{
+    width:80px;
+    left:17%;
+    top:13%;
+}
+
+.hero .s2{
+    width:55px;
+    right:18%;
+    top:17%;
+    animation-delay:1s;
+}
+
+.hero .s3{
+    width:45px;
+    left:14%;
+    bottom:25%;
+    animation-delay:2s;
+}
+
+.hero .s4{
+    width:65px;
+    right:15%;
+    bottom:20%;
+    animation-delay:3s;
+}
+
+.hero .d1{
+    width:105px;
+    left:25%;
+    top:23%;
+}
+
+.hero .d2{
+    width:80px;
+    right:23%;
+    top:34%;
+    animation-delay:1s;
+}
+
+.hero .d3{
+    width:70px;
+    left:18%;
+    bottom:32%;
+    animation-delay:2s;
+}
+
+.hero .d4{
+    width:90px;
+    right:18%;
+    bottom:28%;
+    animation-delay:3s;
+}
+
+.hero .disc1{
+    width:135px;
+    right:3%;
+    top:4%;
+}
+
+.hero .disc2{
+    width:105px;
+    left:3%;
+    bottom:4%;
+    animation-delay:3s;
+}
+
+/* =========================================================
+   CONTENIDO PORTADA
+========================================================= */
+
+.cover{
+    width:100%;
+    max-width:760px;
+    position:relative;
+    z-index:20;
+}
+
+.invitation-small{
+    font-size:13px;
+    letter-spacing:6px;
+    color:#eee5f2;
+    margin-bottom:15px;
+}
+
+.silhouette{
+    width:330px;
+    height:400px;
+    margin:auto;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.silhouette::before{
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.14),
+            transparent 68%
+        );
+
+    box-shadow:
+        0 0 90px rgba(255,255,255,.12);
+}
+
+.silhouette::after{
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(255,255,255,.14);
+}
+
+.silhouette img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+
+    position:relative;
+    z-index:2;
+
+    filter:
+        drop-shadow(
+            0 18px 25px
+            rgba(35,15,45,.35)
+        );
+}
+
+.name{
+    font-family:
+        "Baskerville",
+        Georgia,
+        serif;
+
+    font-style:italic;
+    font-weight:normal;
+
+    font-size:
+        clamp(58px,11vw,92px);
+
+    letter-spacing:2px;
+
+    margin-top:-12px;
+
+    color:#fff;
+
+    text-shadow:
+        0 5px 25px
+        rgba(35,15,45,.3);
+}
+
+.subtitle{
+    font-size:15px;
+    letter-spacing:7px;
+    margin-top:12px;
+    color:#eee5f2;
+}
+
+.ornament{
+    width:300px;
+    margin:25px auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+}
+
+.ornament::before,
+.ornament::after{
+    content:"";
+    height:1px;
+    flex:1;
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #ddd2e2
+        );
+}
+
+.ornament::after{
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #ddd2e2
+        );
+}
+
+.ornament span{
+    width:9px;
+    height:9px;
+    border:1px solid #eee7f0;
+    transform:rotate(45deg);
+}
+
+/* =========================================================
+   CUENTA REGRESIVA
+========================================================= */
+
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin:30px auto;
+}
+
+.time{
+    min-width:85px;
+    padding:15px 10px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border:
+        1px solid
+        rgba(255,255,255,.45);
+
+    box-shadow:
+        inset 0 0 20px rgba(255,255,255,.03);
+
+    backdrop-filter:blur(8px);
+}
+
+.time strong{
+    display:block;
+    font-size:29px;
+    font-weight:normal;
+}
+
+.time span{
+    display:block;
+    font-size:9px;
+    letter-spacing:2px;
+    margin-top:4px;
+    color:#e9e1ec;
+}
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.btn{
+    display:inline-block;
+
+    padding:15px 32px;
+
+    margin:7px;
+
+    border:1px solid #d6c9dc;
+
+    border-radius:2px;
+
+    background:white;
+
+    color:#704b7d;
+
+    font-family:Georgia,serif;
+    font-size:14px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+    box-shadow:
+        0 8px 25px
+        rgba(40,20,50,.15);
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:
+        0 14px 30px
+        rgba(40,20,50,.23);
+}
+
+.music-on{
+    background:#765084;
+    color:white;
+    border-color:#765084;
+}
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+section:not(.hero){
+    position:relative;
+    max-width:900px;
+    margin:auto;
+    padding:100px 30px;
+}
+
+.section-title{
+    color:#72507f;
+    font-size:38px;
+    font-weight:normal;
+    margin:0;
+}
+
+.section-subtitle{
+    font-size:17px;
+    line-height:1.9;
+    max-width:600px;
+    margin:20px auto;
+}
+
+section:nth-of-type(even){
+    max-width:none;
+    background:
+        linear-gradient(
+            135deg,
+            #e6d5ec,
+            #f8f2fa,
+            #e9dbee
+        );
+}
+
+.divider{
+    width:260px;
+    margin:28px auto 38px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    height:1px;
+    flex:1;
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #a79baa
+        );
+}
+
+.divider::after{
+    background:
+        linear-gradient(
+            to left,
+            transparent,
+            #a79baa
+        );
+}
+
+.diamond{
+    width:9px;
+    height:9px;
+    border:1px solid #938996;
+    transform:rotate(45deg);
+}
+
+/* =========================================================
+   INTRODUCCIÓN
+========================================================= */
+
+.intro-card{
+    position:relative;
+
+    padding:60px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #f0e5f4
+        );
+
+    border:
+        1px solid #d0c3d5;
+
+    box-shadow:
+        0 20px 55px
+        rgba(80,50,90,.12);
+}
+
+.intro-card::before,
+.intro-card::after{
+    content:"";
+    position:absolute;
+    width:70px;
+    height:70px;
+    border-color:#a99aaa;
+    border-style:solid;
+}
+
+.intro-card::before{
+    top:15px;
+    left:15px;
+    border-width:1px 0 0 1px;
+}
+
+.intro-card::after{
+    right:15px;
+    bottom:15px;
+    border-width:0 1px 1px 0;
+}
+
+/* =========================================================
+   DECORACIONES SECCIONES
+========================================================= */
+
+.section-butterfly-left{
+    width:180px;
+    left:-80px;
+    top:80px;
+}
+
+.section-butterfly-right{
+    width:160px;
+    right:-70px;
+    bottom:70px;
+}
+
+.section-spark-left{
+    width:80px;
+    left:5%;
+    top:45%;
+}
+
+.section-spark-right{
+    width:65px;
+    right:7%;
+    top:20%;
+}
+
+/* =========================================================
+   IGLESIA
+========================================================= */
+
+.church-card{
+    position:relative;
+
+    min-height:600px;
+
+    overflow:hidden;
+
+    border:
+        7px solid white;
+
+    box-shadow:
+        0 20px 55px
+        rgba(60,40,70,.25);
+}
+
+.church-card > img{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.church-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(74,47,87,.72),
+            rgba(135,94,151,.53),
+            rgba(60,40,72,.65)
+        );
+}
+
+.church-content{
+    position:relative;
+    z-index:4;
+
+    min-height:600px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    padding:50px 25px;
+
+    text-shadow:
+        0 3px 10px rgba(20,10,25,.5);
+}
+
+.church-label{
+    font-size:13px;
+    letter-spacing:6px;
+}
+
+.church-date{
+    font-size:28px;
+    letter-spacing:3px;
+    margin:20px 0;
+}
+
+.church-mass{
+    font-size:20px;
+    letter-spacing:7px;
+}
+
+.church-time{
+    font-size:48px;
+    margin:15px 0 25px;
+}
+
+.church-description{
+    max-width:520px;
+    font-size:18px;
+    line-height:1.9;
+}
+
+.church-decoration{
+    width:100px;
+    margin:20px auto;
+}
+
+/* =========================================================
+   UBICACIÓN
+========================================================= */
+
+.location{
+    position:relative;
+
+    padding:65px 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #7a5888,
+            #a37ab1
+        );
+
+    color:white;
+
+    box-shadow:
+        0 20px 55px
+        rgba(70,45,80,.2);
+
+    overflow:hidden;
+}
+
+.location::before{
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.13);
+
+    top:-280px;
+    right:-180px;
+}
+
+.location::after{
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.09);
+
+    bottom:-250px;
+    left:-160px;
+}
+
+.location h2{
+    color:white;
+}
+
+.address{
+    font-size:19px;
+    line-height:2;
+    position:relative;
+    z-index:2;
+}
+
+.location .btn{
+    position:relative;
+    z-index:3;
+}
+
+/* =========================================================
+   DRESS CODE
+========================================================= */
+
+.dress{
+    position:relative;
+
+    padding:65px 30px;
+
+    background:
+        #faf7fb;
+
+    border:
+        1px solid #d6cadb;
+
+    box-shadow:
+        0 18px 50px
+        rgba(90,65,100,.1);
+
+    overflow:hidden;
+}
+
+.dress::before{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    border:1px solid #e0d5e4;
+
+    top:-120px;
+    left:-80px;
+}
+
+.dress::after{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    border:1px solid #e7ddea;
+
+    bottom:-190px;
+    right:-120px;
+}
+
+.dress-label{
+    letter-spacing:6px;
+    font-size:13px;
+    color:#907398;
+}
+
+.dress-main{
+    font-size:34px;
+    color:#73517f;
+    letter-spacing:4px;
+    margin:22px 0;
+}
+
+.dress-text{
+    max-width:550px;
+    margin:auto;
+    font-size:17px;
+    line-height:1.9;
+}
+
+/* =========================================================
+   GALERÍA
+========================================================= */
+
+.gallery{
+    display:grid;
+
+    grid-template-columns:
+        1.25fr .75fr .75fr;
+
+    grid-template-rows:
+        260px 260px;
+
+    gap:14px;
+
+    margin-top:35px;
+}
+
+.gallery-item{
+    overflow:hidden;
+
+    border:
+        6px solid white;
+
+    box-shadow:
+        0 12px 30px
+        rgba(80,55,90,.15);
+
+    position:relative;
+}
+
+.gallery-item:first-child{
+    grid-row:span 2;
+}
+
+.gallery-item:nth-child(2){
+    grid-column:span 2;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:
+        transform .6s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.07);
+}
+
+/* =========================================================
+   FRASE
+========================================================= */
+
+.quote{
+    padding:110px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4a79,
+            #9670a4,
+            #755182
+        );
+
+    color:white;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* ÚNICO CAMBIO: COLOR DE LA FRASE */
+
+.quote h2{
+    color:#d8a9e8;
+    font-style:italic;
+    font-size:38px;
+}
+
+.quote p{
+    max-width:600px;
+    margin:auto;
+    font-size:18px;
+    line-height:2;
+    color:#d8a9e8;
+}
+
+/* =========================================================
+   CONFIRMACIÓN
+========================================================= */
+
+.confirm{
+    position:relative;
+
+    padding:65px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eee2f2,
+            white
+        );
+
+    border:
+        1px solid #d4c7da;
+
+    box-shadow:
+        0 18px 50px
+        rgba(80,55,90,.1);
+}
+
+.confirm::before,
+.confirm::after{
+    content:"";
+    position:absolute;
+
+    width:90px;
+    height:90px;
+
+    border-color:#a99bab;
+    border-style:solid;
+}
+
+.confirm::before{
+    top:15px;
+    left:15px;
+    border-width:1px 0 0 1px;
+}
+
+.confirm::after{
+    bottom:15px;
+    right:15px;
+    border-width:0 1px 1px 0;
+}
+
+input{
+    width:90%;
+    max-width:430px;
+
+    padding:17px;
+
+    margin:18px 0;
+
+    border:
+        1px solid #cfc0d5;
+
+    background:#fff;
+
+    border-radius:2px;
+
+    font-family:Georgia,serif;
+    font-size:16px;
+
+    outline:none;
+
+    color:#5a4262;
+}
+
+input:focus{
+    border-color:#896696;
+
+    box-shadow:
+        0 0 15px
+        rgba(130,90,145,.12);
+}
+
+/* =========================================================
+   CALENDARIO
+========================================================= */
+
+.calendar{
+    padding:55px 30px;
+
+    background:white;
+
+    border:
+        1px solid #d8cbdc;
+
+    box-shadow:
+        0 15px 45px
+        rgba(80,55,90,.09);
+}
+
+.calendar-date{
+    font-size:21px;
+    letter-spacing:3px;
+    color:#72517e;
+    line-height:2;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    position:relative;
+
+    padding:100px 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #6a4977,
+            #856091
+        );
+
+    color:white;
+
+    overflow:hidden;
+}
+
+footer h2{
+    color:white;
+    font-style:italic;
+    font-size:36px;
+}
+
+footer p{
+    line-height:2;
+    font-size:18px;
+}
+
+footer .fb{
+    width:160px;
+    left:-55px;
+    top:35px;
+}
+
+footer .fb2{
+    width:145px;
+    right:-45px;
+    bottom:30px;
+}
+
+footer .fd{
+    width:80px;
+    left:20%;
+    top:20%;
+}
+
+footer .fd2{
+    width:70px;
+    right:18%;
+    bottom:20%;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:700px){
+
+    body::before{
+        inset:6px;
+    }
+
+    body::after{
+        inset:12px;
+    }
+
+    .hero{
+        padding:60px 20px;
+    }
+
+    .silhouette{
+        width:260px;
+        height:330px;
+    }
+
+    .silhouette::before{
+        width:290px;
+        height:290px;
+    }
+
+    .name{
+        font-size:56px;
+    }
+
+    .subtitle{
+        font-size:11px;
+        letter-spacing:5px;
+    }
+
+    .hero .b1{
+        width:120px;
+        left:-35px;
+    }
+
+    .hero .b2{
+        width:110px;
+        right:-35px;
+    }
+
+    .hero .b3,
+    .hero .b4{
+        width:85px;
+    }
+
+    .hero .disc1{
+        width:90px;
+    }
+
+    .hero .disc2{
+        width:75px;
+    }
+
+    .section-title{
+        font-size:31px;
+    }
+
+    .church-card,
+    .church-content{
+        min-height:560px;
+    }
+
+    .church-date{
+        font-size:21px;
+    }
+
+    .church-time{
+        font-size:38px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:220px 220px 220px;
+    }
+
+    .gallery-item:first-child{
+        grid-row:auto;
+        grid-column:span 2;
+    }
+
+    .gallery-item:nth-child(2){
+        grid-column:auto;
+    }
+
+    .gallery-item:nth-child(3){
+        grid-column:auto;
+    }
+
+    .gallery-item:nth-child(4){
+        grid-column:span 2;
+    }
+
+    .dress-main{
+        font-size:25px;
+    }
+
+    .mariposa-section{
+        opacity:.7;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     PORTADA
+========================================================= -->
+
+<section class="hero">
+
+    <div class="circle1"
+         style="top:50%;left:50%;transform:translate(-50%,-50%);">
+    </div>
+
+    <div class="circle2"
+         style="top:50%;left:50%;transform:translate(-50%,-50%);">
+    </div>
+
+    <div class="circle3"
+         style="top:50%;left:50%;transform:translate(-50%,-50%);">
+    </div>
+
+
+    <div class="decor butterfly b1">
+        <img src="mariposa.png">
+    </div>
+
+    <div class="decor butterfly b2">
+        <img src="mariposa.png">
+    </div>
+
+    <div class="decor butterfly b3">
+        <img src="mariposa.png">
+    </div>
+
+    <div class="decor butterfly b4">
+        <img src="mariposa.png">
+    </div>
+
+
+    <div class="decor star s1">
+        <img src="estrella.png">
+    </div>
+
+    <div class="decor star s2">
+        <img src="estrella.png">
+    </div>
+
+    <div class="decor star s3">
+        <img src="estrella.png">
+    </div>
+
+    <div class="decor star s4">
+        <img src="estrella.png">
+    </div>
+
+
+    <div class="decor spark d1">
+        <img src="destello.png">
+    </div>
+
+    <div class="decor spark d2">
+        <img src="destello.png">
+    </div>
+
+    <div class="decor spark d3">
+        <img src="destello.png">
+    </div>
+
+    <div class="decor spark d4">
+        <img src="destello.png">
+    </div>
+
+
+    <div class="decor disco disc1">
+        <img src="bola disco.png">
+    </div>
+
+    <div class="decor disco disc2">
+        <img src="bola disco.png">
+    </div>
+
+
+    <div class="cover">
+
+        <div class="invitation-small">
+            CON MUCHA ILUSIÓN
+        </div>
+
+
+        <div class="silhouette">
+
+            <img
+                src="silueta.png"
+                alt="Silueta de quinceañera">
+
+        </div>
+
+
+        <div class="name">
+            María José
+        </div>
+
+
+        <div class="subtitle">
+            MIS XV AÑOS
+        </div>
+
+
+        <div class="ornament">
+            <span></span>
+        </div>
+
+
+        <div class="countdown">
+
+            <div class="time">
+                <strong id="dias">0</strong>
+                <span>DÍAS</span>
+            </div>
+
+            <div class="time">
+                <strong id="horas">0</strong>
+                <span>HORAS</span>
+            </div>
+
+            <div class="time">
+                <strong id="minutos">0</strong>
+                <span>MINUTOS</span>
+            </div>
+
+            <div class="time">
+                <strong id="segundos">0</strong>
+                <span>SEGUNDOS</span>
+            </div>
+
+        </div>
+
+
+        <button
+            class="btn"
+            onclick="abrirInvitacion()">
+
+            ABRIR INVITACIÓN
+
+        </button>
+
+
+        <button
+            class="btn"
+            id="musicButton"
+            onclick="controlarMusica()">
+
+            MÚSICA
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<audio id="musica" loop>
+
+    <source
+        src="musica.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+
+<!-- =========================================================
+     INTRODUCCIÓN
+========================================================= -->
+
+<section id="evento">
+
+
+    <div class="decor butterfly section-butterfly-left">
+        <img src="mariposa.png">
+    </div>
+
+    <div class="decor butterfly section-butterfly-right">
+        <img src="mariposa.png">
+    </div>
+
+    <div class="decor spark section-spark-left">
+        <img src="destello.png">
+    </div>
+
+    <div class="decor spark section-spark-right">
+        <img src="destello.png">
+    </div>
+
+
+    <h2 class="section-title">
+        Una noche para recordar
+    </h2>
+
+
+    <div class="divider">
+        <div class="diamond"></div>
+    </div>
+
+
+    <div class="intro-card">
+
+        <p class="section-subtitle">
+
+            Hay momentos que esperamos durante mucho tiempo,
+            y que después se convierten en recuerdos para toda
+            la vida.
+
+            <br><br>
+
+            Quiero compartir contigo una de las noches
+            más especiales de mi vida.
+
+            <br><br>
+
+            <strong>
+                Mis XV años.
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MISA
+========================================================= -->
+
+<section>
+
+    <div class="decor butterfly section-butterfly-right">
+        <img src="mariposa.png">
+    </div>
+
+    <div class="decor spark section-spark-left">
+        <img src="destello.png">
+    </div>
+
+
+    <h2 class="section-title">
+        La celebración
+    </h2>
+
+
+    <div class="divider">
+        <div class="diamond"></div>
+    </div>
+
+
+    <div class="church-card">
+
+        <img src="iglesia.png"
+             alt="Iglesia">
+
+        <div class="church-overlay"></div>
+
+
+        <div class="church-content">
+
+            <div class="church-label">
+                CEREMONIA
+            </div>
+
+
+            <div class="church-date">
+                VIERNES 6 DE NOVIEMBRE
+                <br>
+                DE 2026
+            </div>
+
+
+            <div class="church-mass">
+                MISA
+            </div>
+
+
+            <div class="church-time">
+                7:00 PM
+            </div>
+
+
+            <div class="divider">
+                <div class="diamond"
+                     style="border-color:white;">
+                </div>
+            </div>
+
+
+            <p class="church-description">
+
+                Comenzaremos esta noche tan especial
+                dando gracias y compartiendo juntos
+                este momento tan importante.
+
+                <br><br>
+
+                Después de la misa,
+                continuaremos la celebración.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     UBICACIÓN
+========================================================= -->
+
+<section>
+
+
+    <div class="decor butterfly section-butterfly-left">
+        <img src="mariposa.png">
+    </div>
+
+
+    <div class="decor disco"
+         style="
+         width:140px;
+         right:-40px;
+         top:40px;
+         ">
+        <img src="bola disco.png">
+    </div>
+
+
+    <h2 class="section-title">
+        El lugar
+    </h2>
+
+
+    <div class="divider">
+        <div class="diamond"></div>
+    </div>
+
+
+    <div class="location">
+
+        <div class="address">
+
+            <h2>
+                Aida Palace
+            </h2>
+
+            <div class="divider">
+                <div class="diamond"
+                     style="border-color:white;">
+                </div>
+            </div>
+
+
+            Av. 18 Poniente 1302
+
+            <br>
+
+            Col. 24 El Tamborcito
+
+            <br>
+
+            Puebla, Pue.
+
+            <br><br>
+
+            VIERNES 6 DE NOVIEMBRE DE 2026
+
+            <br>
+
+            7:00 PM
+
+        </div>
+
+
+        <br>
+
+
+        <a
+            class="btn"
+            target="_blank"
+            href="https://www.google.com/maps/search/?api=1&query=Aida%20Palace%20Av.%2018%20Poniente%201302%20Puebla%20Pue%20Mexico">
+
+            VER UBICACIÓN
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     DRESS CODE
+========================================================= -->
+
+<section>
+
+
+    <div class="decor butterfly section-butterfly-right">
+        <img src="mariposa.png">
+    </div>
+
+    <div class="decor star section-spark-left">
+        <img src="estrella.png">
+    </div>
+
+
+    <h2 class="section-title">
+        Código de vestimenta
+    </h2>
+
+
+    <div class="divider">
+        <div class="diamond"></div>
+    </div>
+
+
+    <div class="dress">
+
+        <div class="dress-label">
+            DRESS CODE
+        </div>
+
+
+        <div class="dress-main">
+            FORMAL DE NOCHE
+        </div>
+
+
+        <div class="divider">
+            <div class="diamond"></div>
+        </div>
+
+
+        <p class="dress-text">
+
+            Para esta noche tan especial,
+            te invitamos a vestir de manera
+            elegante, sofisticada y formal.
+
+            <br><br>
+
+            Queremos que todos luzcamos
+            nuestros mejores atuendos para
+            celebrar juntos esta gran noche.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FRASE
+========================================================= -->
+
+<section class="quote">
+
+    <div class="decor butterfly"
+         style="
+         width:170px;
+         left:-50px;
+         top:20px;
+         ">
+        <img src="mariposa.png">
+    </div>
+
+
+    <div class="decor butterfly"
+         style="
+         width:150px;
+         right:-45px;
+         bottom:20px;
+         ">
+        <img src="mariposa.png">
+    </div>
+
+
+    <div class="decor spark"
+         style="
+         width:80px;
+         left:20%;
+         top:20%;
+         ">
+        <img src="destello.png">
+    </div>
+
+
+    <div class="decor spark"
+         style="
+         width:70px;
+         right:20%;
+         bottom:20%;
+         ">
+        <img src="destello.png">
+    </div>
+
+
+    <h2>
+        Una noche.
+        <br>
+        Un sueño.
+        <br>
+        Un recuerdo para siempre.
+    </h2>
+
+
+    <div class="ornament">
+        <span></span>
+    </div>
+
+
+    <p>
+
+        Gracias por formar parte de esta historia
+        y por acompañarme en uno de los momentos
+        más importantes de mi vida.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================================================
+     GALERÍA
+========================================================= -->
+
+<section>
+
+
+    <div class="decor disco"
+         style="
+         width:120px;
+         left:-40px;
+         top:80px;
+         ">
+        <img src="bola disco.png">
+    </div>
+
+
+    <div class="decor butterfly"
+         style="
+         width:175px;
+         right:-70px;
+         top:50%;
+         ">
+        <img src="mariposa.png">
+    </div>
+
+
+    <div class="decor spark"
+         style="
+         width:75px;
+         left:10%;
+         top:20%;
+         ">
+        <img src="destello.png">
+    </div>
+
+
+    <h2 class="section-title">
+        Momentos especiales
+    </h2>
+
+
+    <div class="divider">
+        <div class="diamond"></div>
+    </div>
+
+
+    <p class="section-subtitle">
+
+        Un poquito de mi historia antes
+        de celebrar juntos esta noche.
+
+    </p>
+
+
+    <div class="gallery">
+
+
+        <div class="gallery-item">
+            <img src="imagen 1.jpg">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="imagen 2.jpg">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="imagen 3.jpg">
+        </div>
+
+
+        <div class="gallery-item">
+            <img src="imagen 4.jpg">
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONFIRMACIÓN
+========================================================= -->
+
+<section>
+
+
+    <div class="decor butterfly section-butterfly-left">
+        <img src="mariposa.png">
+    </div>
+
+    <div class="decor butterfly section-butterfly-right">
+        <img src="mariposa.png">
+    </div>
+
+    <div class="decor spark section-spark-left">
+        <img src="destello.png">
+    </div>
+
+
+    <h2 class="section-title">
+        ¿Nos acompañas?
+    </h2>
+
+
+    <div class="divider">
+        <div class="diamond"></div>
+    </div>
+
+
+    <div class="confirm">
+
+
+        <p class="section-subtitle">
+
+            Será un honor compartir esta noche
+            tan especial contigo.
+
+            <br>
+
+            Tu presencia hará que este recuerdo
+            sea todavía más especial.
+
+        </p>
+
+
+        <div class="divider">
+            <div class="diamond"></div>
+        </div>
+
+
+        <form onsubmit="confirmar(event)">
+
+            <strong>
+                NOMBRE DE LA FAMILIA
+            </strong>
+
+
+            <br>
+
+
+            <input
+                id="familia"
+                type="text"
+                placeholder="Escribe el nombre de la familia"
+                required>
+
+
+            <br>
+
+
+            <button
+                class="btn"
+                type="submit">
+
+                CONFIRMAR ASISTENCIA
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CALENDARIO
+========================================================= -->
+
+<section>
+
+
+    <div class="decor butterfly"
+         style="
+         width:150px;
+         left:-55px;
+         top:40px;
+         ">
+        <img src="mariposa.png">
+    </div>
+
+
+    <div class="decor disco"
+         style="
+         width:120px;
+         right:-40px;
+         bottom:30px;
+         ">
+        <img src="bola disco.png">
+    </div>
+
+
+    <h2 class="section-title">
+        Guarda la fecha
+    </h2>
+
+
+    <div class="divider">
+        <div class="diamond"></div>
+    </div>
+
+
+    <div class="calendar">
+
+
+        <div class="calendar-date">
+
+            VIERNES
+            <br>
+
+            6 DE NOVIEMBRE DE 2026
+
+            <br><br>
+
+            7:00 PM
+
+        </div>
+
+
+        <br>
+
+
+        <a
+            class="btn"
+            target="_blank"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=XV%20A%C3%B1os%20de%20Mar%C3%ADa%20Jos%C3%A9&dates=20261106T190000/20261107T010000&details=Mis%20XV%20a%C3%B1os%20de%20Mar%C3%ADa%20Jos%C3%A9&location=Aida%20Palace%2C%20Av.%2018%20Poniente%201302%2C%20Puebla%2C%20Pue.%2C%20M%C3%A9xico">
+
+            AGREGAR A MI CALENDARIO
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL
+========================================================= -->
+
+<footer>
+
+
+    <div class="decor butterfly fb">
+        <img src="mariposa.png">
+    </div>
+
+
+    <div class="decor butterfly fb2">
+        <img src="mariposa.png">
+    </div>
+
+
+    <div class="decor spark fd">
+        <img src="destello.png">
+    </div>
+
+
+    <div class="decor spark fd2">
+        <img src="destello.png">
+    </div>
+
+
+    <h2>
+        María José
+    </h2>
+
+
+    <div class="ornament">
+        <span></span>
+    </div>
+
+
+    <p>
+
+        Gracias por acompañarme
+        <br>
+        en este momento tan especial.
+
+        <br><br>
+
+        Con cariño,
+
+        <br>
+
+        <strong>
+            María José
+        </strong>
+
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/* =========================================================
+   CUENTA REGRESIVA
+========================================================= */
+
+const fechaEvento =
+    new Date(
+        "2026-11-06T19:00:00-06:00"
+    ).getTime();
+
+
+function actualizarCuenta(){
+
+    const ahora =
+        new Date().getTime();
+
+    let diferencia =
+        fechaEvento - ahora;
+
+    if(diferencia < 0){
+        diferencia = 0;
+    }
+
+    const dias =
+        Math.floor(
+            diferencia /
+            (1000*60*60*24)
+        );
+
+    const horas =
+        Math.floor(
+            (diferencia /
+            (1000*60*60)) % 24
+        );
+
+    const minutos =
+        Math.floor(
+            (diferencia /
+            (1000*60)) % 60
+        );
+
+    const segundos =
+        Math.floor(
+            (diferencia /
+            1000) % 60
+        );
+
+    document.getElementById("dias")
+        .textContent=dias;
+
+    document.getElementById("horas")
+        .textContent=horas;
+
+    document.getElementById("minutos")
+        .textContent=minutos;
+
+    document.getElementById("segundos")
+        .textContent=segundos;
+}
+
+actualizarCuenta();
+
+setInterval(
+    actualizarCuenta,
+    1000
+);
+
+
+/* =========================================================
+   ABRIR INVITACIÓN
+========================================================= */
+
+function abrirInvitacion(){
+
+    document
+        .getElementById("evento")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+    reproducirMusica();
+}
+
+
+/* =========================================================
+   MÚSICA
+========================================================= */
+
+function reproducirMusica(){
+
+    const musica =
+        document.getElementById("musica");
+
+    const boton =
+        document.getElementById("musicButton");
+
+    musica.play()
+    .then(()=>{
+
+        boton.textContent =
+            "PAUSAR MÚSICA";
+
+        boton.classList.add(
+            "music-on"
+        );
+
+    })
+    .catch(()=>{
+
+        console.log(
+            "El navegador bloqueó la reproducción."
+        );
+
+    });
+}
+
+
+function controlarMusica(){
+
+    const musica =
+        document.getElementById("musica");
+
+    const boton =
+        document.getElementById("musicButton");
+
+
+    if(musica.paused){
+
+        musica.play()
+        .then(()=>{
+
+            boton.textContent =
+                "PAUSAR MÚSICA";
+
+            boton.classList.add(
+                "music-on"
+            );
+
+        });
+
+    }else{
+
+        musica.pause();
+
+        boton.textContent =
+            "MÚSICA";
+
+        boton.classList.remove(
+            "music-on"
+        );
+    }
+}
+
+
+/* =========================================================
+   CONFIRMACIÓN
+========================================================= */
+
+function confirmar(event){
+
+    event.preventDefault();
+
+    const familia =
+        document
+        .getElementById("familia")
+        .value;
+
+    alert(
+        "Gracias, familia " +
+        familia +
+        ".\n\n" +
+        "Tu confirmación ha sido registrada."
+    );
+}
+
+</script>
+
+</body>
+</html>
